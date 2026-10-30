@@ -33,7 +33,7 @@ export default function DonateModal({ user, onClose, toast }) {
           setBusy(false);
           if (!v.ok) return toast('Payment could not be verified. If money was deducted, please contact support.', 'error');
           // Only shown after the backend has verified the payment signature.
-          toast(`Thank you! Your donation of ₹${final} was received. A receipt was emailed to ${email || 'you'}.`);
+          toast(`Thank you! Your donation of ₹${final} was received.`);
           onClose();
         },
         prefill: { name, email },

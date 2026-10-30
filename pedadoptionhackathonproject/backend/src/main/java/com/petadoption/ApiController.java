@@ -459,7 +459,7 @@ public class ApiController {
         }
         donation.setCreatedAt(LocalDateTime.now());
         Donation saved = donations.save(donation);
-        emailService.sendDonationReceipt(saved);
+        // emailService.sendDonationReceipt(saved);
         return ResponseEntity.ok(saved);
     }
 
@@ -539,7 +539,7 @@ public class ApiController {
             Donation saved = donations.save(donation);
 
             if ("SUCCESS".equals(saved.getStatus())) {
-                emailService.sendDonationReceipt(saved);
+                // emailService.sendDonationReceipt(saved);
             }
 
             return ResponseEntity.ok(Map.of("message", "Donation payment verified successfully!", "status", saved.getStatus(), "donation", saved));
